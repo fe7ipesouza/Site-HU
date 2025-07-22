@@ -711,52 +711,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- FAQ Section -->
-        <section class="bg-white py-16 lg:py-24">
-            <div class="container mx-auto px-4">
-                <!-- Section Header -->
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-900 mb-4">
-                        Perguntas Frequentes
-                    </h2>
-                </div>
-
-                <!-- FAQ List -->
-                <div class="max-w-4xl mx-auto">
-                    <div 
-                        v-for="(item, index) in faqItems" 
-                        :key="item.id"
-                        class="bg-gray-100 p-4 rounded-md mb-3 shadow-sm"
-                    >
-                        <!-- Question Button -->
-                        <button 
-                            @click="toggleFAQ(index)"
-                            class="w-full cursor-pointer font-semibold flex justify-between items-center text-left focus:outline-none hover:text-blue-700 transition-colors duration-200"
-                        >
-                            <span class="text-gray-800 text-lg">{{ item.question }}</span>
-                            <span 
-                                class="text-blue-600 text-xl transform transition-transform duration-300"
-                                :class="{ 'rotate-180': item.isOpen }"
-                            >
-                                ▼
-                            </span>
-                        </button>
-
-                        <!-- Answer Panel -->
-                        <div 
-                            v-show="item.isOpen"
-                            class="mt-4 pt-4 border-t border-gray-200 transition-all duration-300"
-                        >
-                            <p class="text-gray-700 leading-relaxed">
-                                {{ item.answer }}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- About Section -->
         <section class="bg-gray-100 py-16 lg:py-24">
             <div class="container mx-auto px-4">
@@ -864,7 +818,50 @@
                 </div>
             </div>
         </section>
+<!-- FAQ Section -->
+        <section class="bg-white py-16 lg:py-24">
+            <div class="container mx-auto px-4">
+                <!-- Section Header -->
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-900 mb-4">
+                        Perguntas Frequentes
+                    </h2>
+                </div>
 
+                <!-- FAQ List -->
+                <div class="max-w-4xl mx-auto">
+                    <div 
+                        v-for="(item, index) in faqItems" 
+                        :key="item.id"
+                        class="bg-gray-100 p-4 rounded-md mb-3 shadow-sm"
+                    >
+                        <!-- Question Button -->
+                        <button 
+                            @click="toggleFAQ(index)"
+                            class="w-full cursor-pointer font-semibold flex justify-between items-center text-left focus:outline-none hover:text-blue-700 transition-colors duration-200"
+                        >
+                            <span class="text-gray-800 text-lg">{{ item.question }}</span>
+                            <span 
+                                class="text-blue-600 text-xl transform transition-transform duration-300"
+                                :class="{ 'rotate-180': item.isOpen }"
+                            >
+                                ▼
+                            </span>
+                        </button>
+
+                        <!-- Answer Panel -->
+                        <div 
+                            v-show="item.isOpen"
+                            class="mt-4 pt-4 border-t border-gray-200 transition-all duration-300"
+                        >
+                            <p class="text-gray-700 leading-relaxed">
+                                {{ item.answer }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- Footer Section -->
         <footer class="bg-gray-900 text-gray-300">
             <div class="container mx-auto px-4 py-8">
